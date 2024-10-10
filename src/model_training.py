@@ -5,6 +5,7 @@ from src.exception import CustomException
 import sys
 import numpy as np
 
+
 class ModelTraining:
     def __init__(self, config):
         self.config = config

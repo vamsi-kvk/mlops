@@ -4,6 +4,7 @@ from src.exception import CustomException
 import sys
 from sklearn.preprocessing import StandardScaler
 
+
 class DataPreprocessing:
     def __init__(self, config):
         self.config = config

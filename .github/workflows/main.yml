@@ -13,7 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.7, 3.8, 3.9, 3.10]
+        python-version: [3.8, 3.9, 3.10]
+    timeout-minutes: 60  # Increase the timeout limit if possible
 
     steps:
     - name: Checkout code

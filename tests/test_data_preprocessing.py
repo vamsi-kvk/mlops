@@ -3,10 +3,12 @@ import pandas as pd
 from src.data_preprocessing import DataPreprocessing
 import yaml
 
+
 def load_config(config_path):
     with open(config_path, 'r') as file:
         config = yaml.safe_load(file)
     return config
+
 
 class TestDataPreprocessing(unittest.TestCase):
     def setUp(self):
@@ -23,6 +25,7 @@ class TestDataPreprocessing(unittest.TestCase):
         })
         processed_data = self.data_preprocessing.preprocess_data(sample_data)
         self.assertIsNotNone(processed_data)
+
 
 if __name__ == "__main__":
     unittest.main()

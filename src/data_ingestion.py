@@ -3,6 +3,7 @@ from src.logger import logging
 from src.exception import CustomException
 import sys
 
+
 class DataIngestion:
     def __init__(self, config):
         self.config = config
