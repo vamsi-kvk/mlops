@@ -4,11 +4,12 @@
 PYTHON = python
 PYTEST = pytest
 FLAKE8 = flake8
+AUTOPEP8 = autopep8
 COV_REPORT_DIR = htmlcov
 
 # Default target
 .PHONY: all
-all: install install-dev lint test run
+all: clean install install-dev lint test run
 
 # Install production dependencies
 .PHONY: install
@@ -39,6 +40,12 @@ test:
 lint:
 	@echo "Running flake8 linting..."
 	$(FLAKE8) src tests
+
+# Auto-fix linting issues
+.PHONY: fix-lint
+fix-lint:
+	@echo "Automatically fixing linting issues..."
+	$(AUTOPEP8) --in-place --aggressive --aggressive src/*.py tests/*.py
 
 # Clean up coverage reports
 .PHONY: clean

@@ -5,10 +5,12 @@ from sklearn.datasets import load_iris
 from src.model_evaluation import ModelEvaluation
 import yaml
 
+
 def load_config(config_path):
     with open(config_path, 'r') as file:
         config = yaml.safe_load(file)
     return config
+
 
 class TestModelEvaluation(unittest.TestCase):
     def setUp(self):
@@ -21,8 +23,10 @@ class TestModelEvaluation(unittest.TestCase):
         self.model.fit(self.X_train, self.y_train)
 
     def test_evaluate_model(self):
-        accuracy = self.model_evaluation.evaluate_model(self.model, self.X_test, self.y_test)
+        accuracy = self.model_evaluation.evaluate_model(
+            self.model, self.X_test, self.y_test)
         self.assertGreaterEqual(accuracy, 0)
+
 
 if __name__ == "__main__":
     unittest.main()

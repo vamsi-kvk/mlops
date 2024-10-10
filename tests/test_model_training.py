@@ -4,10 +4,12 @@ from sklearn.datasets import load_iris
 from src.model_training import ModelTraining
 import yaml
 
+
 def load_config(config_path):
     with open(config_path, 'r') as file:
         config = yaml.safe_load(file)
     return config
+
 
 class TestModelTraining(unittest.TestCase):
     def setUp(self):
@@ -20,6 +22,7 @@ class TestModelTraining(unittest.TestCase):
     def test_train_model(self):
         model = self.model_training.train_model(self.X_train, self.y_train)
         self.assertIsNotNone(model)
+
 
 if __name__ == "__main__":
     unittest.main()
