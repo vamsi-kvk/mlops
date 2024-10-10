@@ -2,5 +2,5 @@ pandas
 numpy
 scikit-learn
 PyYAML
-python-dotenv==1.0.1
+python-dotenv
 autopep8
