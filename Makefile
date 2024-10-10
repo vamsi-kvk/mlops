@@ -8,7 +8,19 @@ COV_REPORT_DIR = htmlcov
 
 # Default target
 .PHONY: all
-all: lint test run
+all: install install-dev lint test run
+
+# Install production dependencies
+.PHONY: install
+install:
+	@echo "Installing production dependencies..."
+	$(PYTHON) -m pip install -r requirements.txt
+
+# Install development dependencies
+.PHONY: install-dev
+install-dev:
+	@echo "Installing development dependencies..."
+	$(PYTHON) -m pip install -r requirements-dev.txt
 
 # Run the project
 .PHONY: run
@@ -34,6 +46,6 @@ clean:
 	@echo "Cleaning up coverage reports..."
 	rm -rf $(COV_REPORT_DIR) coverage.xml
 
-# Run all tasks: lint, test, and run
+# Run all tasks: clean, install, install-dev, lint, test, and run
 .PHONY: all
-all: clean lint test run
+all: clean install install-dev lint test run
