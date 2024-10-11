@@ -1,3 +1,4 @@
+[![CI/CD Pipeline](https://github.com/vamsi-kvk/mlops/actions/workflows/main.yml/badge.svg)](https://github.com/vamsi-kvk/mlops/actions/workflows/main.yml)
 # Project Name
 
 ## Description
